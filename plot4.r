@@ -17,14 +17,14 @@ target_data$DateTime <- as.POSIXct(DateTime)
 par(mfrow=c(2,2))
 with(target_data,{
   plot(Global_Active_Power~DateTime,type="l", xlab="", ylab="Global Active Power")
-  plot(as.numeric(Voltage)~DateTime,type="l", xlab="", ylab="Voltage")
+  plot(as.numeric(Voltage)~DateTime,type="l", xlab="datetime", ylab="Voltage")
   plot(Sub_metering_1~DateTime, type="l",
        ylab="Energe sub metering", xlab="")
   lines(Sub_metering_2~DateTime,col='Red')
   lines(Sub_metering_3~DateTime,col='Blue')
   legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",cex=0.5,
          legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
-  plot(as.numeric(target_data$Global_reactive_power)~DateTime,type="l", xlab="", ylab="Global_reactive _power")
+  plot(as.numeric(target_data$Global_reactive_power)~DateTime,type="l", xlab="datetime", ylab="Global_reactive _power")
 })
 
 ## save
